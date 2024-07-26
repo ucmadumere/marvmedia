@@ -226,7 +226,61 @@ section {
 	max-width: 1200px;
 	padding: 0px 15px;
 	margin: 0 auto;
+	/* overflow-y: auto; */
 }
+
+/* Infinite slider */
+
+.auto-container-2 {
+	overflow: hidden;
+	padding: 60px 0;
+	white-space: nowrap;
+	position: relative;
+  }
+
+  .auto-container-2:before,
+  .auto-container-2:after {
+	position: absolute;
+	top: 0;
+	width: 150px; /* Adjust based on your needs */
+	height: 100%;
+	content: "";
+	z-index: 2;
+  }
+
+  .auto-container-2:before {
+	left: 0;
+	background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+  }
+
+  .auto-container-2:after {
+	right: 0;
+	background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+  }
+
+  .slider-wrapper {
+	display: flex;
+	align-items: center;
+	animation: auto-infinite-slide 30s linear infinite;
+  }
+
+  .slider-wrapper img {
+	height: 50px; /* Adjust based on your design */
+	margin: 0 15px; /* Adjust spacing between images */
+	flex: 0 0 auto; /* Ensure images do not shrink */
+  }
+
+  @keyframes auto-infinite-slide {
+	from {
+	  transform: translateX(0);
+	}
+	to {
+	  transform: translateX(-100%);
+	}
+  }
+  
+/* Infinite slider ends */
+
 .auto-container.full-width {
 	max-width: 100%;
 }

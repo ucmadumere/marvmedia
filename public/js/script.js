@@ -197,28 +197,37 @@
 	}
 
 	//Mobile Nav Hide Show
-	if($('.mobile-menu').length){		
-		var mobileMenuContent = $('.main-header .nav-outer .main-menu').html();
-		$('.mobile-menu .menu-box .menu-outer').append(mobileMenuContent);
-		$('.sticky-header .main-menu').append(mobileMenuContent);		
-		//Dropdown Button
-		$('.mobile-menu li.dropdown .dropdown-btn').on('click', function() {
+	$(document).ready(function() {
+		if ($('.mobile-menu').length) {
+		  var mobileMenuContent = $('.main-header .nav-outer .main-menu').html();
+		  
+		  // Clear existing content before appending
+		  $('.mobile-menu .menu-box .menu-outer').html(mobileMenuContent);
+		  $('.sticky-header .main-menu').html(mobileMenuContent);
+	  
+		  // Dropdown Button for normal dropdowns
+		  $('.mobile-menu').on('click', 'li.dropdown .dropdown-btn', function() {
 			$(this).toggleClass('open');
 			$(this).prev('ul').slideToggle(500);
-		});
-		//Dropdown Button
-		$('.mobile-menu li.dropdown .dropdown-btn').on('click', function() {
+		  });
+	  
+		  // Dropdown Button for megamenu dropdowns
+		  $('.mobile-menu').on('click', 'li.dropdown .dropdown-btn', function() {
 			$(this).prev('.megamenu').slideToggle(900);
-		});
-		//Menu Toggle Btn
-		$('.mobile-nav-toggler').on('click', function() {
+		  });
+	  
+		  // Menu Toggle Button
+		  $('.mobile-nav-toggler').on('click', function() {
 			$('body').addClass('mobile-menu-visible');
-		});
-		//Menu Toggle Btn
-		$('.mobile-menu .menu-backdrop,.mobile-menu .close-btn,.scroll-nav li a').on('click', function() {
+		  });
+	  
+		  // Close menu when clicking backdrop, close button, or nav links
+		  $('.mobile-menu .menu-backdrop, .mobile-menu .close-btn, .scroll-nav li a').on('click', function() {
 			$('body').removeClass('mobile-menu-visible');
-		});
-	}
+		  });
+		}
+	  });
+	  
 
 	//Sidemenu Nav Hide Show
 	if($('.side-menu').length){		
@@ -788,3 +797,8 @@
 	});	
 
 })(window.jQuery);
+
+document.addEventListener("DOMContentLoaded", function() {
+	var currentYear = new Date().getFullYear();
+	document.getElementById("current-year").textContent = currentYear;
+  });
