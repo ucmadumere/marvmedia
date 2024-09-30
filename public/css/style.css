@@ -646,6 +646,7 @@ ul.header-top-1-contact-info li a:hover {
 }
 .main-header .header-upper .inner-container {
 	position: relative;
+	/* top: -120px; */
 }
 .main-header .header-upper .logo-box {
 	z-index: 10;
@@ -8954,6 +8955,7 @@ figure{
 	position: relative;
 	width: 100%;
 	padding: 0px 70px;
+	/* height: 100px; */
 }
 
 .header-style-14 .main-menu .navigation>li.current>a, 
@@ -23285,6 +23287,14 @@ figure{
 	}
 }
 
+.logo-house{
+	position: relative;
+	left: -90px;
+}
+.logo-house img{
+	max-height: 100px;
+	height: 100%;
+}
 
 
 
