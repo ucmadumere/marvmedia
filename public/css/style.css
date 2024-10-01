@@ -7164,6 +7164,8 @@ cite.projectdetails-1-author-name {
 .project-block-two .inner-box .image-box img{
 	width: 100%;
 	transition: all 500ms ease;
+	height: 100%;
+	max-height: 250px;
 }
 
 .project-block-two .inner-box:hover .image-box img{
@@ -23294,6 +23296,9 @@ figure{
 .logo-house img{
 	max-height: 100px;
 	height: 100%;
+	max-width: 220px;
+	width: 100%;
+	margin-left: 15px;
 }
 
 
